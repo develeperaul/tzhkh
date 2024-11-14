@@ -1,0 +1,11 @@
+extend ../layouts/main.pug
+block top
+  include ../components/header.pug 
+  section.section-first
+    .wrapper
+      .breadcamps 
+        a(href="/") Главный
+        span Новости
+      h1 Новости
+block content
+    include ../components/news-list.pug

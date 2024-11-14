@@ -1,0 +1,132 @@
+include ../mixins/button.pug
+include ../mixins/button-sm.pug
+
+script(src="https://api-maps.yandex.ru/2.1/?apikey=62425c4f-4dfc-4f52-a01f-bc1e23d27b7d&lang=ru_RU" type="text/javascript")
+section.section.section__other.map
+  h2 Карта офисов представительств
+  .map__wrapper
+    .map__select 
+      include ./select-map.pug
+    .map__btns
+      +button-sm("Участок №1" )(data-target="1")
+      +button-sm("Участок №2")(class="btn-sm__border" data-target="2")
+      +button-sm("Участок №3")(class="btn-sm__border" data-target="3")
+      +button-sm("Участок №4")(class="btn-sm__border" data-target="4")
+      +button-sm("Участок №5")(class="btn-sm__border" data-target="5")
+      +button-sm("Участок №4")(class="btn-sm__border" data-target="6")
+      +button-sm("Участок №2")(class="btn-sm__border" data-target="7")
+      +button-sm("Участок №3")(class="btn-sm__border" data-target="8")
+      +button-sm("Участок №4")(class="btn-sm__border" data-target="9")
+      +button-sm("Участок №5")(class="btn-sm__border" data-target="10")
+      +button-sm("Участок №4")(class="btn-sm__border" data-target="11")
+    div.map__content   
+      div.map__contacts 
+        div.map__contacts--title Участок №1 
+        .map__contacts--bottom
+          div 
+            div.map__contacts--subtitle Адрес
+            address.map__contacts--addr ул.Элеваторная д. 112а
+          div 
+            div.map__contacts--subtitle Режим работы
+            div.map__contacts--work 
+              | Пн-Чт с 08:00-17:00
+              br
+              | обед с 12:00-13:00
+              br
+              | Пт с 08:00-16:00
+              br
+              | обед с 12:00-13:00
+      #map
+script.
+      const objCoords = [
+        // Школы
+        {
+          coords: [55.1, 37.8],
+          iconImageHref: 'http://strigi.yes-idea.ru//bitrix/templates/strigi/markers/school.svg',
+          type: 'school'
+        },
+        
+      ]
+      ymaps.ready(init);
+      function init(){
+          
+          var myMap = new ymaps.Map("map", {
+              center: [55.8, 37.8],
+              zoom: 7,
+              controls: []
+
+          });
+          
+          var myGeoObject = new ymaps.GeoObject({
+              geometry: {
+                  type: "Point", // тип геометрии - точка
+                  coordinates: [55.8, 37.8] // координаты точки
+                  //- http://strigi.yes-idea.ru/
+                  
+              }
+          });
+          var myPlacemark = new ymaps.Placemark([55.8, 37.8], {}, {
+              iconLayout: 'default#image',
+              iconImageHref: 'http://strigi.yes-idea.ru//bitrix/templates/strigi/markers/main.svg',
+              iconImageSize: [30, 42],
+              iconImageOffset: [-3, -42]
+          });
+          var myGeoObjects = new ymaps.GeoObjectCollection({}, {});
+          objCoords.forEach(item=>{
+            myGeoObjects.add( new ymaps.Placemark(item.coords, {}, {
+              iconLayout: 'default#image',
+              iconImageHref: item.iconImageHref,
+              iconImageSize: [30, 42],
+              iconImageOffset: [-3, -42]
+            }))
+          })
+
+          myMap.geoObjects.add(myPlacemark)
+          myMap.geoObjects.add(myGeoObjects);
+          //- myMap.geoObjects.removeAll()
+          const btns = document.querySelectorAll(".map .map__btns > button");
+          
+          [...btns].forEach(btn=>btn.addEventListener("click", choosePoint))
+          
+          function choosePoint(){
+            [...btns].forEach(btn=>{
+              btn.classList.remove("active")
+              
+              btn.addEventListener("click", choosePoint)
+            })
+            this.classList.add("active")
+            if(this.dataset?.target){
+              const target = this.dataset.target;
+              if(target === 'all') {
+                
+                myGeoObjects.removeAll()
+                objCoords.forEach(item=>{
+                  myGeoObjects.add( new ymaps.Placemark(item.coords, {}, {
+                    iconLayout: 'default#image',
+                    iconImageHref: item.iconImageHref,
+                    iconImageSize: [30, 42],
+                    iconImageOffset: [-3, -42]
+                  }))
+                })
+                myMap.geoObjects.add(myGeoObjects)
+              } else {
+                myGeoObjects.removeAll()
+                
+                const newArr = objCoords.filter(item=>item.type === target)
+                
+                newArr.forEach(item=>{
+                  myGeoObjects.add( new ymaps.Placemark(item.coords, {}, {
+                    iconLayout: 'default#image',
+                    iconImageHref: item.iconImageHref,
+                    iconImageSize: [30, 42],
+                    iconImageOffset: [-3, -42]
+                  }))
+                })
+                myMap.geoObjects.add(myGeoObjects)
+              }
+            }
+          }
+      }
+
+    
+    

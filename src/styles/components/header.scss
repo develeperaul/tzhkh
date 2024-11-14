@@ -1,0 +1,39 @@
+.header {
+  @apply flex justify-between items-center py-2.5  bg-white px-6 lg:px-20 sticky top-0 h-[68px]  lg:h-[88px] mb-[-68px] lg:mb-[-88px];
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  max-width: 1920px;
+  z-index: 50;
+
+  &__left {
+    @apply lg:flex lg:gap-[74px] lg:items-center;
+  }
+  &__right {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .logo img {
+    height: 48px;
+    @screen lg {
+      height: 68px;
+    }
+  }
+
+  .lerc {
+    @apply text-primary  outline outline-1 outline-primary;
+    border-radius: 20px;
+    font-size: 18px;
+    line-height: 21.47px;
+    padding: 4.5px 22.5px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header__left nav {
+    display: none;
+  }
+  .lerc {
+    display: none;
+  }
+}

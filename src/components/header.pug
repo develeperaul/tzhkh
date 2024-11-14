@@ -1,0 +1,10 @@
+include ../mixins/svg.pug
+header.header
+  .header__left
+    a(href="/" class="logo") 
+      img(src="/public/images/logo.svg"  )
+    include ./nav.pug
+  .header__right 
+    a.lerc(href="/") ЛЭРС учет
+    a(href="/") 
+      +svg('user',32)(class="text-secondary")

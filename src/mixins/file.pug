@@ -1,0 +1,5 @@
+include ./svg.pug
+mixin file(type,href, text)
+  a.file(href=href)
+    +svg(type,36)
+    span= text 

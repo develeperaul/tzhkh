@@ -1,0 +1,15 @@
+doctype html
+html
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width")
+    title=title
+    link(rel="stylesheet" href="/src/styles/main.scss")
+    
+body
+    block top
+    .container
+        main
+            block content    
+            include ../components/contacts.pug
+    include ../components/footer.pug 
+    script(type="module" src="/src/js/main.ts")

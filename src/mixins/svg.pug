@@ -1,0 +1,3 @@
+mixin svg(name,w,h,className)
+  svg(width= w height= h ? h : w class= className)&attributes(attributes)
+    use(xlink:href=`#${name}`)

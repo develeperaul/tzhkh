@@ -1,0 +1,31 @@
+extend ../layouts/main.pug
+include ../mixins/button.pug
+include ../mixins/button-sm.pug
+include ../mixins/svg.pug
+
+
+
+//- .container
+    //- main
+        //- include ../components/news-main.pug
+//- h1=navigation[1]
+//- h1=title
+//- include ../components/nav.pug
+//- img(src="/src/assets/images/bg2.png" style="max-width: 400px")
+//- img(src="/public/images/bg.png" style="max-width: 400px")
+//- +button("test")
+//- +button-sm("test")(class="btn-sm__border")
+//- include ../components/footer.pug 
+//- script(type="module" src="/src/js/main.ts")
+
+
+block top
+  include ../components/header.pug 
+  section.section-first.full(style="background-image: url(/src/assets/images/bg2.png);")
+    h1 Крупнейшая <br/> УК в Республике
+  
+block content
+    include ../components/news-main.pug
+    include ../components/transmission-readings.pug
+    include ../components/map.pug
+    include ../components/partners.pug

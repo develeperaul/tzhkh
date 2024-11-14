@@ -1,0 +1,12 @@
+extend ../layouts/main.pug
+block top
+  include ../components/header.pug 
+  section.section-first
+    .wrapper
+      .breadcamps 
+        a(href="/") Главный
+        span Контакты
+      h1 Контакты 
+block content
+  include ../sections/contacts-map.pug
+    

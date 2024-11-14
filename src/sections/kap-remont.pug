@@ -1,0 +1,48 @@
+include ../mixins/button-sm.pug
+section.section.kap-remont
+  h2 Кап.ремонт
+  p.text Как узнать какой вид работ и на какой год запланирован по программе РЕГИОНАЛЬНОГО ОПЕРАТОРА?
+  .stepper
+     
+    .progresses 
+      .progresses__wrapper
+        div.progress 1
+        div.progress__line
+        div.progress 2
+        div.progress__line
+        div.progress 3
+    .stepper__content
+      .stepper__content-slide
+        div 
+          div Подготовили небольшую инструкцию: 
+          ul
+            li 1. Переходим по ссылке 
+              a.link(href="/") https://kapremont02.ru/
+            li 2. Заходим в раздел “НАЙТИ СВОЙ ДОМ”
+        img(src="/public/images/kap-remont/1.png", alt="")
+      .stepper__content-slide
+        div 
+          ul
+            li 3. В строке “АДРЕС ДОМА” вводим улицу и номер дома
+        img(src="/public/images/kap-remont/2.png", alt="")
+      .stepper__content-slide
+        div 
+          
+          ul
+            li 4.  В открывшемся окне видим все виды работ, которые запланированы и те что были произведены, полную картину по экономике дома: начисление, затраты и долги.
+          div Таким образом в режиме реального времени вы всегда можете отслеживать и сумму денег по вашему дому, какие работы и самое важное на какой период они запланированы.
+        img(src="/public/images/kap-remont/3.png", alt="")
+    .stepper__btns(data-step="first") 
+      .content__bottom
+        +button-sm("Продолжить")(type='button' class="btn-next") 
+        
+      //- .stepper__btns
+      //-   button.btn.btn-back(type='button') Назад
+    .stepper__btns
+      .content__bottom
+        +button-sm("Назад")(type='button' class="btn-back") 
+        +button-sm("Продолжить")(type='button' class="btn-next") 
+    .stepper__btns(data-step="last") 
+      .content__bottom
+        +button-sm("Назад")(type='button' class="btn-back") 
+        

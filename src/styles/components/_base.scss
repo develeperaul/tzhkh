@@ -1,0 +1,9 @@
+@tailwind base;
+@layer base {
+  html {
+    font-size: 100%;
+  }
+  body {
+    @apply font-gilroy font-semibold text-text_base lg:text-text_30;
+  }
+}

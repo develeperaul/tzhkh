@@ -1,0 +1,107 @@
+script(src="https://api-maps.yandex.ru/2.1/?apikey=62425c4f-4dfc-4f52-a01f-bc1e23d27b7d&lang=ru_RU" type="text/javascript")
+section.section.contacts-map 
+  div.contacts-map__wrapper 
+    div 
+      div.contacts-map__link 
+        div.contacts-map__link--title Юр. адрес
+        div.contacts-map__link--address г. Стерлитамак, ул. Коммунистическая, 75б
+      div.contacts-map__link 
+        div.contacts-map__link--title Номер телефона приемной
+        a.contacts-map__link--link(href="tel:+73473279077") 8(3473)27-90-77
+      div.contacts-map__link 
+        div.contacts-map__link--title E-Mail:
+        a.contacts-map__link--link(href="mailto:tjh@list.ru") tjh@list.ru
+    #contacts
+script.
+  const objCoords = [
+    // Школы
+    {
+      coords: [55.1, 37.8],
+      iconImageHref: 'http://strigi.yes-idea.ru//bitrix/templates/strigi/markers/school.svg',
+      type: 'school'
+    },
+    
+  ]
+  ymaps.ready(init);
+  function init(){
+      
+      var myMap = new ymaps.Map("contacts", {
+          center: [55.8, 37.8],
+          zoom: 7,
+          controls: []
+
+      });
+      
+      var myGeoObject = new ymaps.GeoObject({
+          geometry: {
+              type: "Point", // тип геометрии - точка
+              coordinates: [55.8, 37.8] // координаты точки
+              //- http://strigi.yes-idea.ru/
+              
+          }
+      });
+      var myPlacemark = new ymaps.Placemark([55.8, 37.8], {}, {
+          iconLayout: 'default#image',
+          iconImageHref: 'http://strigi.yes-idea.ru//bitrix/templates/strigi/markers/main.svg',
+          iconImageSize: [30, 42],
+          iconImageOffset: [-3, -42]
+      });
+      var myGeoObjects = new ymaps.GeoObjectCollection({}, {});
+      objCoords.forEach(item=>{
+        myGeoObjects.add( new ymaps.Placemark(item.coords, {}, {
+          iconLayout: 'default#image',
+          iconImageHref: item.iconImageHref,
+          iconImageSize: [30, 42],
+          iconImageOffset: [-3, -42]
+        }))
+      })
+
+      myMap.geoObjects.add(myPlacemark)
+      myMap.geoObjects.add(myGeoObjects);
+      //- myMap.geoObjects.removeAll()
+      const btns = document.querySelectorAll(".map .map__btns > button");
+      
+      [...btns].forEach(btn=>btn.addEventListener("click", choosePoint))
+      
+      function choosePoint(){
+        [...btns].forEach(btn=>{
+          btn.classList.remove("active")
+          
+          btn.addEventListener("click", choosePoint)
+        })
+        this.classList.add("active")
+        if(this.dataset?.target){
+          const target = this.dataset.target;
+          if(target === 'all') {
+            
+            myGeoObjects.removeAll()
+            objCoords.forEach(item=>{
+              myGeoObjects.add( new ymaps.Placemark(item.coords, {}, {
+                iconLayout: 'default#image',
+                iconImageHref: item.iconImageHref,
+                iconImageSize: [30, 42],
+                iconImageOffset: [-3, -42]
+              }))
+            })
+            myMap.geoObjects.add(myGeoObjects)
+          } else {
+            myGeoObjects.removeAll()
+            
+            const newArr = objCoords.filter(item=>item.type === target)
+            
+            newArr.forEach(item=>{
+              myGeoObjects.add( new ymaps.Placemark(item.coords, {}, {
+                iconLayout: 'default#image',
+                iconImageHref: item.iconImageHref,
+                iconImageSize: [30, 42],
+                iconImageOffset: [-3, -42]
+              }))
+            })
+            myMap.geoObjects.add(myGeoObjects)
+          }
+        }
+      }
+  }
+
+    
+    

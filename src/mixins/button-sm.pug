@@ -1,0 +1,5 @@
+mixin button-sm(text,href)
+  if(href)
+    a( href=href class="btn-sm")&attributes(attributes)= text 
+  else
+    button(class="btn-sm")&attributes(attributes)= text 

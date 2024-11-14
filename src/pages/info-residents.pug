@@ -1,0 +1,27 @@
+extend ../layouts/main.pug
+include ../mixins/button-sm.pug
+block top
+  include ../components/header.pug 
+  section.section-first.section-black(style="background-image: url('public/images/bg-other.jpeg');")
+    .wrapper
+      .breadcamps 
+        a(href="/") Главный
+        span Для жителей
+      .content
+        h1 ИНФОРМАЦИЯ ДЛЯ ЖИТЕЛЕЙ
+        .btns 
+          +button-sm("Информация для жителей", '/')
+          +button-sm("Полезные советы", '/')(class="btn-sm__border")
+          +button-sm("Дневник благоустройтсва", '/')(class="btn-sm__border")
+          +button-sm("Соседский центр", '/')(class="btn-sm__border")
+block content
+  include ../sections/rules-residence.pug
+  include ../sections/kap-remont.pug
+  include ../sections/faq.pug
+  
+  include ../sections/rules-residence2.pug
+  section(class='grid gap-4 lg:grid-cols-2')
+    include ../sections/files.pug
+    include ../sections/files2.pug
+  include ../sections/faq.pug
+    

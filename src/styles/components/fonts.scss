@@ -1,0 +1,78 @@
+@mixin freeset {
+  $path: "/src/assets/fonts/gilroy";
+
+  @font-face {
+    font-family: "gilroy";
+    src: url(#{$path}/Gilroy-Regular.ttf);
+    src:
+      local("gilroy"),
+      local("Gilroy-Regular"),
+      url(#{$path}/Gilroy-Regular.eot) format("eot"),
+      url(#{$path}/Gilroy-Regular.woff2) format("woff2"),
+      url(#{$path}/Gilroy-Regular.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gilroy";
+    src: url(#{$path}/Gilroy-Medium.ttf);
+    src:
+      local("gilroy"),
+      local("Gilroy-Medium"),
+      url(#{$path}/Gilroy-Medium.eot) format("eot"),
+      url(#{$path}/Gilroy-Medium.woff2) format("woff2"),
+      url(#{$path}/Gilroy-Medium.woff) format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gilroy";
+    src: url(#{$path}/Gilroy-Semibold.ttf);
+    src:
+      local("gilroy"),
+      local("Gilroy-Semibold"),
+      url(#{$path}/Gilroy-Semibold.eot) format("eot"),
+      url(#{$path}/Gilroy-Semibold.woff2) format("woff2"),
+      url(#{$path}/Gilroy-Semibold.woff) format("woff");
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gilroy";
+    src: url(#{$path}/Gilroy-Bold.ttf);
+    src:
+      local("gilroy"),
+      local("Gilroy-Bold"),
+      url(#{$path}/Gilroy-Bold.eot) format("eot"),
+      url(#{$path}/Gilroy-Bold.woff2) format("woff2"),
+      url(#{$path}/Gilroy-Bold.woff) format("woff");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gilroy";
+    src: url(#{$path}/Gilroy-Black.ttf);
+    src:
+      local("gilroy"),
+      local("Gilroy-Black"),
+      url(#{$path}/Gilroy-Black.eot) format("eot"),
+      url(#{$path}/Gilroy-Black.woff2) format("woff2"),
+      url(#{$path}/Gilroy-Black.woff) format("woff");
+    font-weight: 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gilroy";
+    src: url(#{$path}/Gilroy-Heavy.ttf);
+    src:
+      local("gilroy"),
+      local("Gilroy-Heavy"),
+      url(#{$path}/Gilroy-Heavy.eot) format("eot"),
+      url(#{$path}/Gilroy-Heavy.woff2) format("woff2"),
+      url(#{$path}/Gilroy-Heavy.woff) format("woff");
+    font-weight: 900;
+    font-style: normal;
+  }
+}
+
+@include freeset();

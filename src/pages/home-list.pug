@@ -1,0 +1,14 @@
+extend ../layouts/main.pug
+block top
+  include ../components/header.pug 
+  section.section-first
+    .wrapper
+      .breadcamps 
+        a(href="/") Главный
+        span Наши дома
+      .content
+        h1 Наши дома
+        h3 Многоквартирные дома 
+block content
+  include ../sections/home-list.pug
+    

@@ -1,0 +1,8 @@
+include ../mixins/button.pug
+section.section.news
+  //- h2 Новости
+  .list 
+    each item in [1,2,3,4]
+      include ./news-item.pug
+
+    

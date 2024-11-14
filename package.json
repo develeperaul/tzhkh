@@ -1,0 +1,38 @@
+{
+  "name": "tzhkh",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vituum/vite-plugin-postcss": "^1.1.0",
+    "@vituum/vite-plugin-pug": "^1.1.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "sass": "^1.80.4",
+    "sass-embedded": "^1.80.4",
+    "tailwindcss": "^3.4.14",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.9",
+    "vite-imagetools": "^7.0.4",
+    "vite-plugin-icons-spritesheet": "^2.2.1",
+    "vite-plugin-image-optimizer": "^1.1.8",
+    "vite-plugin-singlefile": "^2.0.2",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vite-plugin-svg-sprite": "^0.5.2",
+    "vite-plugin-svg-spriter": "1.0.0",
+    "vite-plugin-webp-compress": "^1.1.4",
+    "vite-plugin-webp-generator": "^0.1.0",
+    "vituum": "^1.1.1"
+  },
+  "dependencies": {
+    "@vituum/vite-plugin-tailwindcss": "^1.2.0",
+    "cheerio": "^1.0.0",
+    "sharp": "^0.33.5",
+    "vite-plugin-compression": "^0.5.1"
+  }
+}

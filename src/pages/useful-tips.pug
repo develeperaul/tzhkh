@@ -1,0 +1,19 @@
+extend ../layouts/main.pug
+include ../mixins/button-sm.pug
+block top
+  include ../components/header.pug 
+  section.section-first.section-black(style="background-image: url('public/images/bg-other.jpeg');")
+    .wrapper
+      .breadcamps 
+        a(href="/") Главный
+        span Для жителей
+      .content
+        h1 ИНФОРМАЦИЯ ДЛЯ ЖИТЕЛЕЙ
+        .btns 
+          +button-sm("Информация для жителей", '/info-residents.html')(class="btn-sm__border")
+          +button-sm("Полезные советы", '/useful-tips.html')
+          +button-sm("Дневник благоустройтсва", '/')(class="btn-sm__border")
+          +button-sm("Соседский центр", '/')(class="btn-sm__border")
+block content
+  include ../components/news-list.pug
+    

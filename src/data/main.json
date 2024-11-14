@@ -1,0 +1,27 @@
+{
+  "navigation": [
+    {
+      "path": "/",
+      "title": "О компании"
+    },
+    {
+      "path": "/",
+      "title": "Для жителей"
+    },
+    {
+      "path": "/",
+      "title": "Наши дома"
+    },
+    {
+      "path": "/",
+      "title": "Контакты"
+    },
+    {
+      "path": "/",
+      "title": "Новости"
+    }
+  ],
+  "template": "layouts/main.pug",
+
+  "title": "tets"
+}

@@ -1,0 +1,33 @@
+footer {
+  @apply bg-primary lg:pt-[197px] lg:pb-[90px];
+  .footer-desk {
+    @apply hidden lg:grid lg:grid-cols-[auto_1fr] lg:gap-[130px];
+    .logo {
+      width: 95px;
+      height: 66px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    nav {
+      @apply flex gap-[100px];
+      padding-top: 13px;
+      div {
+        @apply grid gap-3;
+        align-content: start;
+        h4 {
+          @apply text-accept_blue text-text_30;
+        }
+        .list {
+          @apply grid gap-3;
+          align-content: start;
+          .item {
+            @apply text-white text-text_base hover:text-accept_blue;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+}
