@@ -1,0 +1,19 @@
+include ../mixins/file.pug
+section.section.management-company
+  h2 Управляющая компания
+  .management-company__content
+    .management-company__block
+      h4 Общая информация об управляющей организации
+      .list
+        each n in [1,1,1]
+          +file("pdf", '/', 'в формате pdf _')
+    .management-company__block
+      h4 Лицензия
+      .list
+        each n in [1,1,1]
+          +file("pdf", '/', 'в формате pdf _')
+    .management-company__block
+      h4 Показатели финансово-хозяйственной деятельности
+      .list
+        each n in [1,1,1]
+          +file("pdf", '/', 'в формате pdf _')

@@ -1,10 +1,22 @@
 include ../mixins/svg.pug
+include ../mixins/button-sm.pug
+
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="manager-modal" class="animate__faster")
+  .content 
+    button.btn-fit.btn-close(data-target="manager-modal"  data-action="close") 
+      +svg('close')
+    +button-sm("Инструкция", '/')
+    +button-sm("Перейти на портал", '/')
+
 header.header
   .header__left
     a(href="/" class="logo") 
       img(src="/public/images/logo.svg"  )
     include ./nav.pug
   .header__right 
-    a.lerc(href="/") ЛЭРС учет
+    button.lerc(data-target='manager-modal' data-action='open') ЛЭРС учет
     a(href="/") 
       +svg('user',32)(class="text-secondary")
+    button.btn-fit(data-target='sidebar' data-action='toggle') 
+      +svg('burger')
+      +svg('close')

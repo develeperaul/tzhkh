@@ -1,0 +1,21 @@
+
+extend ../layouts/main.pug
+include ../mixins/svg.pug
+block top
+  include ../components/header.pug 
+  section.section-first.section-slider
+    .wrapper.p-0 
+      div(class="overflow-hidden")
+        .swiper.home-slider
+          .swiper-wrapper
+            each val in [1, 2, 3, 4, 5]
+              .swiper-slide
+                img(src="/public/test.png", alt="")
+          
+          .prev
+            +svg('back')
+          .next
+            +svg('forward')
+block content
+    include ../sections/card-home.pug
+    include ../components/news-main.pug

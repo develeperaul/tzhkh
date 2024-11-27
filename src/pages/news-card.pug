@@ -1,0 +1,23 @@
+extend ../layouts/main.pug
+block top
+  include ../components/header.pug 
+  section.section-first.section-other
+    .wrapper
+      .breadcamps 
+        a(href="/") Главный
+        a(href="/news.html") Новости
+        span.overflow Напоминаем о простых правилах skdjfnhskjdhgfljdhfhglsjhglksjdfhgk;ldjsfhgdksl
+      .content
+        h1 Напоминаем о простых правилах, которые помогут не стать жертвой мошенников.
+        div.data 03.09.2014
+block content
+  include ../sections/news-card.pug
+  
+  section.section.news
+    h2 Другие новости соседского центра
+    .list 
+      each item in [1,2,3,4]
+        include ../components/news-item.pug
+    
+      
+    

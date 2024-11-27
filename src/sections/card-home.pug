@@ -1,0 +1,33 @@
+section.section.card-home 
+  .breadcamps 
+    a(href="/") Главный
+    a(href="/home-list.html") Наши дома
+    span ЖЭУ №1
+  h2 ЖЭУ №1
+  .card-home__top-list
+    .card-home__contacts
+      div 
+        .card-home__contacts--title Адрес офиса обслуживания:
+        address.card-home__contacts--text г. Стерлитамак, ул. Коммунистическая, 75б
+      div 
+        .card-home__contacts--title Телефон:
+        a.card-home__contacts--text(href="tel:+7 (999) 999-99-99") +7 (999) 999-99-99
+      div 
+        .card-home__contacts--title E-Mail:
+        a.card-home__contacts--text(href="mailto:почта@mail.com") почта@mail.com
+    .card-home__time
+      .card-home__time--title График работы офиса обслуживания 
+      .card-home__time--list 
+        .item Понедельник_ _ _ _ _ _ _ _ _ _ _ _8:30-17:30
+        .item Вторник_ _ _ _ _ _ _ _ _ _ _ _ _ _ _8:30-17:30
+        .item Среда_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _8:30-17:30
+        .item Четверг_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 8:30-17:30
+        .item Пятница_ _ _ _ _ _ _ _ _ _ _ _ _ _ _8:30-16:30
+        .item.off Суббота_ _ _ _ _ _ _ _ _ _ _ _ _ _ _выходной
+        .item.off Воскресенье_ _ _ _ _ _ _ _ _ _ _ _выходной 
+        
+  .card-home__bottom-list
+    .title Обслуживаемые дома
+    .list 
+      each n in [1,1,1,1,1,1]
+        .item г. Стерлитамак, ул. Коммунистическая, 75б

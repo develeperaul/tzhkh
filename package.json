@@ -31,8 +31,10 @@
   },
   "dependencies": {
     "@vituum/vite-plugin-tailwindcss": "^1.2.0",
+    "animate.css": "^4.1.1",
     "cheerio": "^1.0.0",
     "sharp": "^0.33.5",
+    "swiper": "^11.1.14",
     "vite-plugin-compression": "^0.5.1"
   }
 }

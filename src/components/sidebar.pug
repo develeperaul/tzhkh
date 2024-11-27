@@ -1,0 +1,30 @@
+
+#sidebar.sidebar(data-animate-open='fadeInLeft' data-animate-close='fadeOutLeft' data-full class="animate__faster")
+  .sidebar__top
+    //- a.lerc(href="/") ЛЭРС учет
+    button.lerc(data-target='manager-modal' data-action='open') ЛЭРС учет
+    .accordeon.accordeon-other
+      .item
+        a(href="/").item__head О компании
+      .item
+        .item__head 
+          div Для жителей
+          +svg('down', 24)
+        .item__body 
+          .item__body-wrapper
+            div 
+              a(href="/" ) Test
+              a(href="/" ) Test
+              a(href="/" ) Test
+              a(href="/" ) Test
+      .item
+        .item__head 
+          div Для жителей
+          +svg('down', 24)
+        .item__body 
+          .item__body-wrapper
+            div 
+              a(href="/" ) Test
+              a(href="/" ) Test
+              a(href="/" ) Test
+              a(href="/" ) Test

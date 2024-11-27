@@ -26,6 +26,7 @@ const SVG_FOLDER_PATH = path.resolve(SRC_PATH, "assets", "icons");
 export default defineConfig({
   publicDir: "public",
   // root: "./",
+  base: "./",
   // build: {
 
   // },
@@ -76,6 +77,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         api: "modern-compiler", // or "modern", "legacy"
+
         importers: [
           // ...
         ],

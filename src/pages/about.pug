@@ -1,0 +1,17 @@
+extend ../layouts/main.pug
+block top
+  include ../components/header.pug 
+  section.section-first
+    .wrapper
+      .breadcamps 
+        a(href="/") Главный
+        span О компании
+      .content
+        h1 О компании
+block content
+  include ../sections/about.pug
+  include ../sections/history.pug
+  include ../sections/advantages.pug
+  include ../sections/management-company.pug
+  include ../sections/achievements.pug
+    

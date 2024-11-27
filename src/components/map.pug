@@ -8,35 +8,31 @@ section.section.section__other.map
     .map__select 
       include ./select-map.pug
     .map__btns
-      +button-sm("Участок №1" )(data-target="1")
-      +button-sm("Участок №2")(class="btn-sm__border" data-target="2")
-      +button-sm("Участок №3")(class="btn-sm__border" data-target="3")
-      +button-sm("Участок №4")(class="btn-sm__border" data-target="4")
-      +button-sm("Участок №5")(class="btn-sm__border" data-target="5")
-      +button-sm("Участок №4")(class="btn-sm__border" data-target="6")
-      +button-sm("Участок №2")(class="btn-sm__border" data-target="7")
-      +button-sm("Участок №3")(class="btn-sm__border" data-target="8")
-      +button-sm("Участок №4")(class="btn-sm__border" data-target="9")
-      +button-sm("Участок №5")(class="btn-sm__border" data-target="10")
-      +button-sm("Участок №4")(class="btn-sm__border" data-target="11")
-    div.map__content   
-      div.map__contacts 
-        div.map__contacts--title Участок №1 
-        .map__contacts--bottom
-          div 
-            div.map__contacts--subtitle Адрес
-            address.map__contacts--addr ул.Элеваторная д. 112а
-          div 
-            div.map__contacts--subtitle Режим работы
-            div.map__contacts--work 
-              | Пн-Чт с 08:00-17:00
-              br
-              | обед с 12:00-13:00
-              br
-              | Пт с 08:00-16:00
-              br
-              | обед с 12:00-13:00
-      #map
+    .tabs
+      .tabs__wrapper
+        +button-sm("Участок №1" )( class='active' data-target="data-1")
+        +button-sm("Участок №2")( data-target="data-2")
+        
+    #data-1.tab-content.active  
+      div.map__content   
+        div.map__contacts 
+          div.map__contacts--title Участок №1 
+          .map__contacts--bottom
+            div 
+              div.map__contacts--subtitle Адрес
+              address.map__contacts--addr ул.Элеваторная д. 112а
+            div 
+              div.map__contacts--subtitle Режим работы
+              div.map__contacts--work 
+                | Пн-Чт с 08:00-17:00
+                br
+                | обед с 12:00-13:00
+                br
+                | Пт с 08:00-16:00
+                br
+                | обед с 12:00-13:00
+        #map
+    #data-2.tab-content.
 script.
       const objCoords = [
         // Школы

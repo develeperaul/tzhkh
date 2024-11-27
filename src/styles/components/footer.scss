@@ -30,4 +30,19 @@ footer {
       }
     }
   }
+
+  .footer-mob {
+    padding-top: 70px;
+    padding-bottom: 90px;
+    padding-inline: 24px;
+    display: grid;
+    gap: 34px;
+    @screen lg {
+      display: none;
+    }
+    .logo {
+      width: 82px;
+      height: 57px;
+    }
+  }
 }

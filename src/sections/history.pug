@@ -1,0 +1,25 @@
+include ../mixins/svg.pug
+section.section.history 
+  h2 История компании
+  img(src="/src/assets/images/history.jpg")
+  .slider.grid 
+    .overflow-hidden
+      .swiper.history-slider
+        .swiper-wrapper
+          each val in [1, 2, 3, 4, 5]
+            .swiper-slide
+              .slide-content
+                h4.slide-content__title 1999 ГОД
+                ul 
+                  li Начало производства хрустальных изделий
+                  li Реконструирована печь для варки хрустального стекла. Первые экспериментальные образцы посуды и люстр получены у 7 ноября 1978 г. 
+                  li Освоен выпуск коврово-мозаичной плитки на вновь построенной второй линии 
+              .img
+                img(src="/src/assets/images/history.jpg", alt="")
+        .swiper-pagination
+        .prev
+          .btn-fit
+            +svg('back')
+        .next
+          .btn-fit
+            +svg('forward')

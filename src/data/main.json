@@ -1,24 +1,62 @@
 {
   "navigation": [
     {
-      "path": "/",
+      "path": "/about.html",
       "title": "О компании"
     },
     {
-      "path": "/",
+      "path": "/info-residents.html",
       "title": "Для жителей"
     },
     {
-      "path": "/",
+      "path": "/home-list.html",
       "title": "Наши дома"
     },
     {
-      "path": "/",
+      "path": "/contacts.html",
       "title": "Контакты"
     },
     {
-      "path": "/",
+      "path": "/news.html",
       "title": "Новости"
+    }
+  ],
+  "links": [
+    {
+      "path": "/",
+      "title": "Главная"
+    },
+    {
+      "path": "/about.html",
+      "title": "О нас"
+    },
+    {
+      "path": "/news.html",
+      "title": "Новости"
+    },
+    {
+      "path": "/info-residents.html",
+      "title": "Информация для жителей"
+    },
+    {
+      "path": "/improvement-diary.html",
+      "title": "Дневник благоустройства"
+    },
+    {
+      "path": "/useful-tips.html",
+      "title": "Полезные советы"
+    },
+    {
+      "path": "/neighborhood-center.html",
+      "title": "Соседский центр"
+    },
+    {
+      "path": "/home-list.html",
+      "title": "Наши дома"
+    },
+    {
+      "path": "/contacts.html",
+      "title": "Контакты"
     }
   ],
   "template": "layouts/main.pug",
