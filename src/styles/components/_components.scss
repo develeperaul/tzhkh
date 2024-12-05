@@ -534,6 +534,19 @@
   }
 }
 
+.general-slider {
+  @apply relative;
+  @apply lg:h-screen;
+
+  .swiper-wrapper,
+  .swiper-slide {
+    @apply h-full;
+  }
+  img {
+    @apply h-full w-full object-cover;
+  }
+}
+
 .sidebar {
   @apply fixed top-0 left-0 pb-10 px-6 right-0 z-40  w-screen h-screen bg-white transform -translate-x-full;
   padding-top: calc(68px + 34px);

@@ -16,7 +16,8 @@ header.header
   .header__right 
     button.lerc(data-target='manager-modal' data-action='open') ЛЭРС учет
     a(href="/") 
-      +svg('user',32)(class="text-secondary")
+      //- +svg('eye-off',32)(class="text-secondary")
+      +svg('eye-on',32)(class="text-secondary")
     button.btn-fit(data-target='sidebar' data-action='toggle') 
       +svg('burger')
       +svg('close')

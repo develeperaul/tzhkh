@@ -30,6 +30,7 @@
     "vituum": "^1.1.1"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
     "@vituum/vite-plugin-tailwindcss": "^1.2.0",
     "animate.css": "^4.1.1",
     "cheerio": "^1.0.0",
