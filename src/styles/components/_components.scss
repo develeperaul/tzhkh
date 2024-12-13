@@ -535,15 +535,44 @@
 }
 
 .general-slider {
-  @apply relative;
-  @apply lg:h-screen;
+  @apply relative h-full;
 
   .swiper-wrapper,
   .swiper-slide {
     @apply h-full;
   }
+  .btn,
+  .btn-sm {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin-inline: auto;
+    // @screen lg {
+    //   transform: translateY(-50%);
+    // }
+  }
   img {
     @apply h-full w-full object-cover;
+  }
+  .btn-prev {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    cursor: pointer;
+    z-index: 10;
+    color: theme("colors.primary");
+    transform: translateY(-50%);
+  }
+  .btn-next {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    cursor: pointer;
+    z-index: 10;
+    color: theme("colors.primary");
+    transform: translateY(-50%);
   }
 }
 

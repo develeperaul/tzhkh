@@ -1,5 +1,10 @@
 @tailwind base;
 @layer base {
+  :root {
+    --swiper-pagination-color: theme(colors.primary);
+    --swiper-pagination-bullet-inactive-color: theme(colors.primary_92);
+    --swiper-pagination-bullet-inactive-opacity: 0.9;
+  }
   html {
     font-size: 100%;
   }

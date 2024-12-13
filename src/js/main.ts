@@ -24,6 +24,20 @@ import {
   Autoplay,
 } from "swiper/modules";
 document.addEventListener("DOMContentLoaded", () => {
+  const info = document.querySelector("#info");
+  if (info) {
+    if (!window.localStorage.getItem("info")) {
+      info.classList.add("active");
+      const btn = info.querySelector("button");
+      if (btn) {
+        btn.onclick = () => {
+          window.localStorage.setItem("info", "1");
+          info.classList.remove("active");
+        };
+      }
+    }
+  }
+
   new Swiper(".home-slider", {
     modules: [EffectFade, Navigation, FreeMode],
 
@@ -67,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     effect: "fade",
     autoHeight: true,
     autoplay: {
-      delay: 5000,
+      delay: 10000,
     },
     loop: true,
     fadeEffect: {

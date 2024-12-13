@@ -26,16 +26,30 @@ block top
       .swiper-wrapper
         .swiper-slide
           picture
-            source(media="(max-width: 1024px)" srcset="/public/images/headslider/2.png" )
-            img(src="/public/images/headslider/1.png"  )
+            source(media="(max-width: 1024px)" srcset="/public/images/headslider/mob-slide1.png" )
+            img(src="/public/images/headslider/slide1.png"  )
+          +button-sm("test", 'href')
+
         .swiper-slide
           picture
-            source(media="(max-width: 1024px)" srcset="/public/images/headslider/2.png" )
-            img(src="/public/images/headslider/2.png"  )
+            source(media="(max-width: 1024px)" srcset="/public/images/headslider/mob-slide2.png" )
+            img(src="/public/images/headslider/slide2.png"  )
+          +button-sm("test", 'href')
         .swiper-slide
           picture
-            source(media="(max-width: 1024px)" srcset="/public/images/headslider/2.png" )
-            img(src="/public/images/headslider/3.png"  )
+            source(media="(max-width: 1024px)" srcset="/public/images/headslider/mob-slide3.png" )
+            img(src="/public/images/headslider/slide3.png"  )
+          +button-sm("test", 'href')
+        .swiper-slide
+          picture
+            source(media="(max-width: 1024px)" srcset="/public/images/headslider/mob-slide4.png" )
+            img(src="/public/images/headslider/slide4.png"  )
+          +button-sm("test", 'href')
+      .swiper-pagination
+      .btn-prev
+        +svg('arrow-back', 35)
+      .btn-next
+        +svg('arrow-forward', 35)
     //- h1 Крупнейшая <br/> УК в Республике
   
 block content
